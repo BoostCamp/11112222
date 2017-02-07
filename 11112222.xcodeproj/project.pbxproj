@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		836625331E4993EF002676E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625321E4993EF002676E5 /* AppDelegate.swift */; };
+		836625351E4993EF002676E5 /* OTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625341E4993EF002676E5 /* OTHomeViewController.swift */; };
+		836625381E4993EF002676E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836625361E4993EF002676E5 /* Main.storyboard */; };
+		8366253A1E4993EF002676E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836625391E4993EF002676E5 /* Assets.xcassets */; };
+		8366253D1E4993EF002676E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */; };
+		836625471E49AC94002676E5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625461E49AC94002676E5 /* Card.swift */; };
+		836625491E49AD67002676E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625481E49AD67002676E5 /* User.swift */; };
+		8366254B1E49ADA6002676E5 /* CardComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366254A1E49ADA6002676E5 /* CardComment.swift */; };
+		8366254D1E49B3FA002676E5 /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366254C1E49B3FA002676E5 /* VoteItem.swift */; };
+		8398B14C1E49B936000FA81B /* OTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14B1E49B936000FA81B /* OTTabBarController.swift */; };
+		8398B14E1E49BC8B000FA81B /* OTEditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14D1E49BC8B000FA81B /* OTEditCardViewController.swift */; };
+		8398B1501E49BDAD000FA81B /* OTUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14F1E49BDAD000FA81B /* OTUserViewController.swift */; };
+		8398B1521E49BDC9000FA81B /* OTEditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1511E49BDC9000FA81B /* OTEditCommentViewController.swift */; };
+		8398B1541E49BE2F000FA81B /* OTSearchItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1531E49BE2F000FA81B /* OTSearchItemViewController.swift */; };
+		8398B1561E49C00B000FA81B /* OTCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1551E49C00B000FA81B /* OTCardDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8366252F1E4993EF002676E5 /* 11112222.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 11112222.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		836625321E4993EF002676E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		836625341E4993EF002676E5 /* OTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTHomeViewController.swift; sourceTree = "<group>"; };
+		836625371E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		836625391E4993EF002676E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8366253C1E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8366253E1E4993EF002676E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		836625461E49AC94002676E5 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		836625481E49AD67002676E5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8366254A1E49ADA6002676E5 /* CardComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComment.swift; sourceTree = "<group>"; };
+		8366254C1E49B3FA002676E5 /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
+		8398B14B1E49B936000FA81B /* OTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTTabBarController.swift; sourceTree = "<group>"; };
+		8398B14D1E49BC8B000FA81B /* OTEditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTEditCardViewController.swift; sourceTree = "<group>"; };
+		8398B14F1E49BDAD000FA81B /* OTUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUserViewController.swift; sourceTree = "<group>"; };
+		8398B1511E49BDC9000FA81B /* OTEditCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTEditCommentViewController.swift; sourceTree = "<group>"; };
+		8398B1531E49BE2F000FA81B /* OTSearchItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSearchItemViewController.swift; sourceTree = "<group>"; };
+		8398B1551E49C00B000FA81B /* OTCardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCardDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8366252C1E4993EF002676E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		836625261E4993EF002676E5 = {
+			isa = PBXGroup;
+			children = (
+				836625311E4993EF002676E5 /* 11112222 */,
+				836625301E4993EF002676E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		836625301E4993EF002676E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8366252F1E4993EF002676E5 /* 11112222.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		836625311E4993EF002676E5 /* 11112222 */ = {
+			isa = PBXGroup;
+			children = (
+				836625441E49AA7D002676E5 /* Models */,
+				836625451E49AA8C002676E5 /* Controllers */,
+				836625321E4993EF002676E5 /* AppDelegate.swift */,
+				836625361E4993EF002676E5 /* Main.storyboard */,
+				836625391E4993EF002676E5 /* Assets.xcassets */,
+				8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */,
+				8366253E1E4993EF002676E5 /* Info.plist */,
+			);
+			path = 11112222;
+			sourceTree = "<group>";
+		};
+		836625441E49AA7D002676E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				836625481E49AD67002676E5 /* User.swift */,
+				836625461E49AC94002676E5 /* Card.swift */,
+				8366254A1E49ADA6002676E5 /* CardComment.swift */,
+				8366254C1E49B3FA002676E5 /* VoteItem.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		836625451E49AA8C002676E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8398B14B1E49B936000FA81B /* OTTabBarController.swift */,
+				836625341E4993EF002676E5 /* OTHomeViewController.swift */,
+				8398B14F1E49BDAD000FA81B /* OTUserViewController.swift */,
+				8398B14D1E49BC8B000FA81B /* OTEditCardViewController.swift */,
+				8398B1511E49BDC9000FA81B /* OTEditCommentViewController.swift */,
+				8398B1531E49BE2F000FA81B /* OTSearchItemViewController.swift */,
+				8398B1551E49C00B000FA81B /* OTCardDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8366252E1E4993EF002676E5 /* 11112222 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 836625411E4993EF002676E5 /* Build configuration list for PBXNativeTarget "11112222" */;
+			buildPhases = (
+				8366252B1E4993EF002676E5 /* Sources */,
+				8366252C1E4993EF002676E5 /* Frameworks */,
+				8366252D1E4993EF002676E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 11112222;
+			productName = 11112222;
+			productReference = 8366252F1E4993EF002676E5 /* 11112222.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		836625271E4993EF002676E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Dongyoon Kang";
+				TargetAttributes = {
+					8366252E1E4993EF002676E5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4JN8G3HTW2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8366252A1E4993EF002676E5 /* Build configuration list for PBXProject "11112222" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 836625261E4993EF002676E5;
+			productRefGroup = 836625301E4993EF002676E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8366252E1E4993EF002676E5 /* 11112222 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8366252D1E4993EF002676E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8366253D1E4993EF002676E5 /* LaunchScreen.storyboard in Resources */,
+				8366253A1E4993EF002676E5 /* Assets.xcassets in Resources */,
+				836625381E4993EF002676E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8366252B1E4993EF002676E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8398B14E1E49BC8B000FA81B /* OTEditCardViewController.swift in Sources */,
+				8366254D1E49B3FA002676E5 /* VoteItem.swift in Sources */,
+				8366254B1E49ADA6002676E5 /* CardComment.swift in Sources */,
+				836625491E49AD67002676E5 /* User.swift in Sources */,
+				8398B1561E49C00B000FA81B /* OTCardDetailViewController.swift in Sources */,
+				8398B14C1E49B936000FA81B /* OTTabBarController.swift in Sources */,
+				8398B1521E49BDC9000FA81B /* OTEditCommentViewController.swift in Sources */,
+				8398B1541E49BE2F000FA81B /* OTSearchItemViewController.swift in Sources */,
+				836625351E4993EF002676E5 /* OTHomeViewController.swift in Sources */,
+				836625471E49AC94002676E5 /* Card.swift in Sources */,
+				836625331E4993EF002676E5 /* AppDelegate.swift in Sources */,
+				8398B1501E49BDAD000FA81B /* OTUserViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		836625361E4993EF002676E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				836625371E4993EF002676E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8366253C1E4993EF002676E5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8366253F1E4993EF002676E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		836625401E4993EF002676E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		836625421E4993EF002676E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4JN8G3HTW2;
+				INFOPLIST_FILE = 11112222/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dongyoon.-1112222";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		836625431E4993EF002676E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4JN8G3HTW2;
+				INFOPLIST_FILE = 11112222/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dongyoon.-1112222";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8366252A1E4993EF002676E5 /* Build configuration list for PBXProject "11112222" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8366253F1E4993EF002676E5 /* Debug */,
+				836625401E4993EF002676E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		836625411E4993EF002676E5 /* Build configuration list for PBXNativeTarget "11112222" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				836625421E4993EF002676E5 /* Debug */,
+				836625431E4993EF002676E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 836625271E4993EF002676E5 /* Project object */;
+}
