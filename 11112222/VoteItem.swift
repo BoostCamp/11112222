@@ -8,15 +8,21 @@
 
 import Foundation
 
+
 class VoteItem {
     // Mark: Properties
-    var text: String
+    var text: String?
     var image : String?
     var linkAddr : String? // naver api를 사용해서 만든 voteItem의 경우 링크를 가진다.
     var voteCount : Int?
     
-    init(text : String) {
-        self.text = text
+    func isPostable() -> Bool {
+        if let _ = self.text{
+            return true
+        } else if let _ = self.image {
+            return true
+        }
+        return false
     }
-    
+
 }

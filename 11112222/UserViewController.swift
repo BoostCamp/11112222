@@ -1,5 +1,5 @@
 //
-//  OTSearchItemViewController.swift
+//  UserViewController.swift
 //  11112222
 //
 //  Created by Dongyoon Kang on 2017. 2. 7..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OTSearchItemViewController: UIViewController {
+class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

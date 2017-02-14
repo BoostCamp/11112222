@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831EE72E1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831EE72C1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift */; };
+		831EE72F1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831EE72D1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib */; };
+		832ED52F1E4B502100F79F8C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED52E1E4B502100F79F8C /* DataController.swift */; };
+		832ED5311E4C073F00F79F8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED5301E4C073F00F79F8C /* Category.swift */; };
+		8343FF2F1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343FF2E1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift */; };
+		8361AF751E4B0D0400C73D9E /* CardItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */; };
+		8363E6B31E4AC89A00CE23B3 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */; };
 		836625331E4993EF002676E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625321E4993EF002676E5 /* AppDelegate.swift */; };
-		836625351E4993EF002676E5 /* OTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625341E4993EF002676E5 /* OTHomeViewController.swift */; };
+		836625351E4993EF002676E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625341E4993EF002676E5 /* HomeViewController.swift */; };
 		836625381E4993EF002676E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836625361E4993EF002676E5 /* Main.storyboard */; };
 		8366253A1E4993EF002676E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836625391E4993EF002676E5 /* Assets.xcassets */; };
 		8366253D1E4993EF002676E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */; };
@@ -16,18 +23,28 @@
 		836625491E49AD67002676E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625481E49AD67002676E5 /* User.swift */; };
 		8366254B1E49ADA6002676E5 /* CardComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366254A1E49ADA6002676E5 /* CardComment.swift */; };
 		8366254D1E49B3FA002676E5 /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366254C1E49B3FA002676E5 /* VoteItem.swift */; };
-		8398B14C1E49B936000FA81B /* OTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14B1E49B936000FA81B /* OTTabBarController.swift */; };
-		8398B14E1E49BC8B000FA81B /* OTEditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14D1E49BC8B000FA81B /* OTEditCardViewController.swift */; };
-		8398B1501E49BDAD000FA81B /* OTUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14F1E49BDAD000FA81B /* OTUserViewController.swift */; };
-		8398B1521E49BDC9000FA81B /* OTEditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1511E49BDC9000FA81B /* OTEditCommentViewController.swift */; };
-		8398B1541E49BE2F000FA81B /* OTSearchItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1531E49BE2F000FA81B /* OTSearchItemViewController.swift */; };
-		8398B1561E49C00B000FA81B /* OTCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1551E49C00B000FA81B /* OTCardDetailViewController.swift */; };
+		837216771E4C512D0037167B /* CategoryCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837216761E4C512D0037167B /* CategoryCollectionViewDelegate.swift */; };
+		8380B6EF1E52B541004C843E /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380B6EE1E52B541004C843E /* PlaceHolderTextView.swift */; };
+		8380B6F31E52B81A004C843E /* PlaceHolderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8380B6F21E52B81A004C843E /* PlaceHolderTextView.xib */; };
+		8398B14E1E49BC8B000FA81B /* EditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14D1E49BC8B000FA81B /* EditCardViewController.swift */; };
+		8398B1501E49BDAD000FA81B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14F1E49BDAD000FA81B /* UserViewController.swift */; };
+		8398B1521E49BDC9000FA81B /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1511E49BDC9000FA81B /* EditCommentViewController.swift */; };
+		83C93B1F1E51635A00E47ADF /* CardCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */; };
+		83E08C581E4D8FB4002F245D /* EditCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E08C571E4D8FB4002F245D /* EditCardTableCell.swift */; };
+		83E08C5A1E4DA022002F245D /* EditCardTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E08C591E4DA022002F245D /* EditCardTableHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831EE72C1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		831EE72D1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		832ED52E1E4B502100F79F8C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		832ED5301E4C073F00F79F8C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8343FF2E1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		8366252F1E4993EF002676E5 /* 11112222.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 11112222.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836625321E4993EF002676E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		836625341E4993EF002676E5 /* OTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTHomeViewController.swift; sourceTree = "<group>"; };
+		836625341E4993EF002676E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		836625371E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		836625391E4993EF002676E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8366253C1E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,12 +53,15 @@
 		836625481E49AD67002676E5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8366254A1E49ADA6002676E5 /* CardComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComment.swift; sourceTree = "<group>"; };
 		8366254C1E49B3FA002676E5 /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
-		8398B14B1E49B936000FA81B /* OTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTTabBarController.swift; sourceTree = "<group>"; };
-		8398B14D1E49BC8B000FA81B /* OTEditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTEditCardViewController.swift; sourceTree = "<group>"; };
-		8398B14F1E49BDAD000FA81B /* OTUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUserViewController.swift; sourceTree = "<group>"; };
-		8398B1511E49BDC9000FA81B /* OTEditCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTEditCommentViewController.swift; sourceTree = "<group>"; };
-		8398B1531E49BE2F000FA81B /* OTSearchItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSearchItemViewController.swift; sourceTree = "<group>"; };
-		8398B1551E49C00B000FA81B /* OTCardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCardDetailViewController.swift; sourceTree = "<group>"; };
+		837216761E4C512D0037167B /* CategoryCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		8380B6EE1E52B541004C843E /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
+		8380B6F21E52B81A004C843E /* PlaceHolderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceHolderTextView.xib; sourceTree = "<group>"; };
+		8398B14D1E49BC8B000FA81B /* EditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardViewController.swift; sourceTree = "<group>"; };
+		8398B14F1E49BDAD000FA81B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		8398B1511E49BDC9000FA81B /* EditCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
+		83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCoverCollectionViewCell.swift; sourceTree = "<group>"; };
+		83E08C571E4D8FB4002F245D /* EditCardTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardTableCell.swift; sourceTree = "<group>"; };
+		83E08C591E4DA022002F245D /* EditCardTableHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardTableHeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +75,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		832ED52D1E4B4FEA00F79F8C /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				832ED52E1E4B502100F79F8C /* DataController.swift */,
+			);
+			name = DataControllers;
+			sourceTree = "<group>";
+		};
+		834656981E50470A0092FEE8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				831EE72C1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift */,
+				831EE72D1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib */,
+				836625341E4993EF002676E5 /* HomeViewController.swift */,
+				8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */,
+				83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */,
+				8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */,
+				8343FF2E1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		834656991E5047270092FEE8 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				8398B1511E49BDC9000FA81B /* EditCommentViewController.swift */,
+				83E08C571E4D8FB4002F245D /* EditCardTableCell.swift */,
+				83E08C591E4DA022002F245D /* EditCardTableHeaderCell.swift */,
+				8398B14D1E49BC8B000FA81B /* EditCardViewController.swift */,
+			);
+			name = Edit;
+			sourceTree = "<group>";
+		};
+		8346569A1E5047310092FEE8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8398B14F1E49BDAD000FA81B /* UserViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		8363E6AE1E4AC41600CE23B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				834656981E50470A0092FEE8 /* Main */,
+				8346569A1E5047310092FEE8 /* User */,
+				834656991E5047270092FEE8 /* Edit */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		836625261E4993EF002676E5 = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +145,12 @@
 		836625311E4993EF002676E5 /* 11112222 */ = {
 			isa = PBXGroup;
 			children = (
+				8380B6ED1E52B4F6004C843E /* CustomView */,
+				836625451E49AA8C002676E5 /* ViewControllers */,
 				836625441E49AA7D002676E5 /* Models */,
-				836625451E49AA8C002676E5 /* Controllers */,
+				837216751E4C51200037167B /* Delegates */,
+				832ED52D1E4B4FEA00F79F8C /* DataControllers */,
+				8363E6AE1E4AC41600CE23B3 /* Views */,
 				836625321E4993EF002676E5 /* AppDelegate.swift */,
 				836625361E4993EF002676E5 /* Main.storyboard */,
 				836625391E4993EF002676E5 /* Assets.xcassets */,
@@ -92,22 +167,33 @@
 				836625461E49AC94002676E5 /* Card.swift */,
 				8366254A1E49ADA6002676E5 /* CardComment.swift */,
 				8366254C1E49B3FA002676E5 /* VoteItem.swift */,
+				832ED5301E4C073F00F79F8C /* Category.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		836625451E49AA8C002676E5 /* Controllers */ = {
+		836625451E49AA8C002676E5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8398B14B1E49B936000FA81B /* OTTabBarController.swift */,
-				836625341E4993EF002676E5 /* OTHomeViewController.swift */,
-				8398B14F1E49BDAD000FA81B /* OTUserViewController.swift */,
-				8398B14D1E49BC8B000FA81B /* OTEditCardViewController.swift */,
-				8398B1511E49BDC9000FA81B /* OTEditCommentViewController.swift */,
-				8398B1531E49BE2F000FA81B /* OTSearchItemViewController.swift */,
-				8398B1551E49C00B000FA81B /* OTCardDetailViewController.swift */,
 			);
-			name = Controllers;
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		837216751E4C51200037167B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				837216761E4C512D0037167B /* CategoryCollectionViewDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		8380B6ED1E52B4F6004C843E /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				8380B6EE1E52B541004C843E /* PlaceHolderTextView.swift */,
+				8380B6F21E52B81A004C843E /* PlaceHolderTextView.xib */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831EE72F1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib in Resources */,
 				8366253D1E4993EF002676E5 /* LaunchScreen.storyboard in Resources */,
 				8366253A1E4993EF002676E5 /* Assets.xcassets in Resources */,
 				836625381E4993EF002676E5 /* Main.storyboard in Resources */,
+				8380B6F31E52B81A004C843E /* PlaceHolderTextView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,18 +271,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8398B14E1E49BC8B000FA81B /* OTEditCardViewController.swift in Sources */,
+				831EE72E1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift in Sources */,
+				8398B14E1E49BC8B000FA81B /* EditCardViewController.swift in Sources */,
+				8363E6B31E4AC89A00CE23B3 /* CardTableViewCell.swift in Sources */,
 				8366254D1E49B3FA002676E5 /* VoteItem.swift in Sources */,
+				8380B6EF1E52B541004C843E /* PlaceHolderTextView.swift in Sources */,
 				8366254B1E49ADA6002676E5 /* CardComment.swift in Sources */,
 				836625491E49AD67002676E5 /* User.swift in Sources */,
-				8398B1561E49C00B000FA81B /* OTCardDetailViewController.swift in Sources */,
-				8398B14C1E49B936000FA81B /* OTTabBarController.swift in Sources */,
-				8398B1521E49BDC9000FA81B /* OTEditCommentViewController.swift in Sources */,
-				8398B1541E49BE2F000FA81B /* OTSearchItemViewController.swift in Sources */,
-				836625351E4993EF002676E5 /* OTHomeViewController.swift in Sources */,
+				8343FF2F1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
+				83E08C581E4D8FB4002F245D /* EditCardTableCell.swift in Sources */,
+				8361AF751E4B0D0400C73D9E /* CardItemCollectionViewCell.swift in Sources */,
+				83C93B1F1E51635A00E47ADF /* CardCoverCollectionViewCell.swift in Sources */,
+				832ED5311E4C073F00F79F8C /* Category.swift in Sources */,
+				8398B1521E49BDC9000FA81B /* EditCommentViewController.swift in Sources */,
+				837216771E4C512D0037167B /* CategoryCollectionViewDelegate.swift in Sources */,
+				832ED52F1E4B502100F79F8C /* DataController.swift in Sources */,
+				836625351E4993EF002676E5 /* HomeViewController.swift in Sources */,
 				836625471E49AC94002676E5 /* Card.swift in Sources */,
 				836625331E4993EF002676E5 /* AppDelegate.swift in Sources */,
-				8398B1501E49BDAD000FA81B /* OTUserViewController.swift in Sources */,
+				8398B1501E49BDAD000FA81B /* UserViewController.swift in Sources */,
+				83E08C5A1E4DA022002F245D /* EditCardTableHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

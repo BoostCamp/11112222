@@ -10,7 +10,7 @@ import Foundation
 
 class CardComment {
     // MARK: Properties
-    let user : User
+    var user : User
     var text : String
     
     init(writer user: User, description text: String) {
