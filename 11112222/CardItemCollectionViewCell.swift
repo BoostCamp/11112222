@@ -10,11 +10,11 @@ import UIKit
 
 class CardItemCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var ivVote: UIImageView!
+    @IBOutlet weak var optionImageView: UIImageView!
     
     func configureCell(item: VoteItem) -> Void {
+        if let image = item.image {
+            optionImageView.image = image
+        }
     }
-    
-
-    
 }

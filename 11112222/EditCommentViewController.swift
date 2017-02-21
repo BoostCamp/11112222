@@ -13,24 +13,29 @@ protocol EditCommentViewControllerDelegate {
 class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
     // MARK: - State Enum
     enum EditState { case post, edit } // POST는 최초, Edit은 텍스트가 있을 때 수정
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var placeholderTextView: PlaceHolderTextView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var commentBackgroundView: UIView!
     var input : String?
     
     var state : EditState?
     var delegate : EditCommentViewControllerDelegate?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         placeholderTextView.delegate = self
         placeholderTextView.isHidden = true
-
+        commentBackgroundView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        commentBackgroundView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
+        
+        commentBackgroundView.layer.shadowOpacity = 0.8
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,13 +47,13 @@ class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+        
         placeholderTextView.textView.becomeFirstResponder()
         if let inputData = input {
             placeholderTextView.textView.text = inputData
             placeholderTextView.textViewDidChange(placeholderTextView.textView)
         }
-
+        
         super.viewDidAppear(animated)
     }
     
@@ -69,14 +74,14 @@ class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
-
+    
     func keyboardWillShow(_ notification:Notification) {
-//        let keyboardRect = getKeyboardRect(notification)
-//        let textview = findFirstResponder() as! UITextView
-//        if keyboardRect.contains(textView.frame.origin) { // bottom text view
+        //        let keyboardRect = getKeyboardRect(notification)
+        //        let textview = findFirstResponder() as! UITextView
+        //        if keyboardRect.contains(textView.frame.origin) { // bottom text view
         placeholderTextView.isHidden = false
         view.frame.origin.y = 0 - getKeyboardRect(notification).height
-//        }
+        //        }
     }
     
     func keyboardDidShow(_ notification:Notification) {
@@ -102,13 +107,17 @@ class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
         }
         return nil
     }
-
+    
     func backgroundTapped(_ sender : UITapGestureRecognizer) {
         
         if sender.state == .ended {
             if placeholderTextView.isEmpty { // post -> empty
-                dismiss(animated: true, completion: nil)
+                dismiss(animated: false, completion: nil)
             } else {
+                commentBackgroundView.isHidden = true
+                self.placeholderTextView.textView.resignFirstResponder()
+                
+                //                placeholderTextView.isHidden = true
                 showAlertView()
             }
         }
@@ -116,7 +125,6 @@ class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
     
     // MARK: - PlaceHolderTextView Delegate
     func hasText(_ flag: Bool) {
-        print("hasText: \(flag)")
         configureUI(flag)
     }
     
@@ -133,18 +141,21 @@ class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
     }
     
     func showAlertView() {
-        let dimissAlertController: UIAlertController = UIAlertController(title: nil, message: "입력을 삭제하시겠습니까?", preferredStyle: .alert)
+        let dimissAlertController: UIAlertController = UIAlertController(title: nil, message: "입력을 취소하시겠습니까?", preferredStyle: .alert)
         
         //Create and add the Cancel action
         let cancelAction: UIAlertAction = UIAlertAction(title: "계속 작성", style: .cancel) { action -> Void in
             //Just dismiss the action sheet
             self.placeholderTextView.textView.becomeFirstResponder()
+            self.commentBackgroundView.isHidden = false
+            
+            //            self.placeholderTextView.isHidden = false
         }
         dimissAlertController.addAction(cancelAction)
         
-        let okAction : UIAlertAction = UIAlertAction(title: "삭제", style: .destructive) { action -> Void in
+        let okAction : UIAlertAction = UIAlertAction(title: "취소", style: .destructive) { action -> Void in
             
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
         dimissAlertController.addAction(okAction)
         //Present the AlertController
@@ -155,17 +166,18 @@ class EditCommentViewController: UIViewController, PlaceHolderTextViewDelegate {
     // MARK: - IBAction
     @IBAction func SendButtonClick(_ sender: Any) {
         delegate?.endEdittingWithText(message: placeholderTextView.textView.text)
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
+        
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

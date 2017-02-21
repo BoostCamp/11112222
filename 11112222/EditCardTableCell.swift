@@ -37,11 +37,7 @@ class EditCardTableCell: UITableViewCell, UITextFieldDelegate {
     
     
     //MARK: - TextField Delegate
-    func textFieldDidBeginEditing(_ textField: UITextField) {
         
-//        textField.placeholder?.removeAll()
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         let input = textField.text!
         let trimmed = input.trimmingCharacters(in: .whitespaces)

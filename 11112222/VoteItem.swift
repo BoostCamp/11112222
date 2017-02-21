@@ -7,22 +7,34 @@
 //
 
 import Foundation
+import UIKit
 
 
 class VoteItem {
     // Mark: Properties
     var text: String?
-    var image : String?
+    var image : UIImage?
+    var imageUrl : String?
     var linkAddr : String? // naver api를 사용해서 만든 voteItem의 경우 링크를 가진다.
     var voteCount : Int?
+    var isImageSetted : Bool = false
     
-    func isPostable() -> Bool {
-        if let _ = self.text{
-            return true
-        } else if let _ = self.image {
-            return true
-        }
-        return false
+    // unique id for find object
+    var id : Int?
+    
+    var isUsingOK : Bool {
+        return (text != nil && !(text?.trimmingCharacters(in: .whitespaces).isEmpty)!) || isImageSetted
+    }
+    
+    init(dic: Dictionary<String, Any>) {
+        text = dic["description"] as? String
+        imageUrl = dic["imageUrl"] as? String
+        voteCount = dic["count"] as? Int
+    }
+    
+    init() {
+        
     }
 
+    
 }

@@ -8,24 +8,20 @@
 
 import UIKit
 
-class EditCardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class EditCardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NetworkResultDelegate {
     
     // MARK: - Properties
     @IBOutlet weak var editCardTableView : UITableView!
-    var voteItems = [VoteItem]()
-
+    
+    var card = Card()
+    var optionItemCount = 2
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         editCardTableView.rowHeight = UITableViewAutomaticDimension
         editCardTableView.estimatedRowHeight = 100
         editCardTableView.allowsSelection = false // selection false
-
-        // init post data
-        for _ in  0...1 {
-            voteItems.append(VoteItem())
-        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +43,43 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func onCancelClick() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func onNextClick(_ sender: Any) {
+        if card.isPostable {
+            DataController.sharedInstance().delegate = self
+            DataController.sharedInstance().postCardIntoFirebase(card: self.card)
+        } else {
+            showAlertView()
+        }
+    }
+    // result delegate
+    func uploadCompleted(result: Bool) {
+        print("result:\(result)")
+        if result {
+            // 화면 끄자
+            dismiss(animated: true, completion: nil)
+            
+        } else {
+            // 에러
+            
+        }
+    }
+    
+    
+    // show alert view
+    func showAlertView() {
+        let dimissAlertController: UIAlertController = UIAlertController(title: nil, message: "입력 폼이 완성되지 않았습니다", preferredStyle: .alert)
+        
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "확인", style: .cancel) { action -> Void in
+            //Just dismiss the action sheet
+            //self.placeholderTextView.textView.becomeFirstResponder()
+        }
+        dimissAlertController.addAction(cancelAction)
+        //Present the AlertController
+        self.present(dimissAlertController, animated: true, completion: nil)
+    }
+    
     
     func showAtionSheetForPhoto() {
         let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -73,7 +106,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             self.present(pickerController, animated: true, completion: nil)
-
+            
         }
         actionSheetController.addAction(choosePictureAction)
         
@@ -88,26 +121,27 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "editCardCell", for: indexPath) as! EditCardTableCell
             cell.optionLabel.placeholder = "option \(indexPath.row)"
-//            cell.btnCamera.tag = indexPath.row
+            //            cell.btnCamera.tag = indexPath.row
             cell.tag = indexPath.row
             cell.configureCell()
             cell.delegate = self
-//            cell.btnCamera.addTarget(self, action:#selector(showAtionSheetForPhoto(_:)), for: UIControlEvents.touchUpInside)
+            //            cell.btnCamera.addTarget(self, action:#selector(showAtionSheetForPhoto(_:)), for: UIControlEvents.touchUpInside)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "editCardHeaderCell") as! EditCardTableHeaderCell
             cell.configureCell()
             cell.delegate = self
+            cell.categoryButton.addTarget(self, action: #selector(goToCategoryController), for: UIControlEvents.touchUpInside)
+            
             cell.tag = indexPath.row
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 1 + voteItems.count // 1은 0번째 로우
+        return optionItemCount + 1 // 1은 0번째 로우
     }
-
+    
     // MARK: - TableView Delegate
     
     
@@ -122,17 +156,17 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     var isKeyboardShowing : Bool = false
-
+    
     func keyboardWillShow(_ notification:Notification) {
         if isKeyboardShowing {
             return
         }
         
         let textField = findFirstResponder() as? UITextField
-    
+        
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-
+            
             var frame = editCardTableView.frame
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationBeginsFromCurrentState(true)
@@ -149,7 +183,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         isKeyboardShowing = true
-
+        
     }
     
     func keyboardWillHide(_ notification:Notification){
@@ -168,7 +202,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func findFirstResponder() -> UIResponder? {
-
+        
         for v2 in self.editCardTableView.visibleCells {
             for v3 in v2.contentView.subviews {
                 if v3.isFirstResponder {
@@ -176,7 +210,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
             }
         }
-
+        
         return nil
     }
     
@@ -187,22 +221,21 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
         return keyboardSize.cgRectValue
     }
     
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwindToEditCardEditController(segue: UIStoryboardSegue) {
     }
-    */
+    
+    func goToCategoryController() {
+        performSegue(withIdentifier: "CategoryTableViewController", sender: self)
+    }
     
     var cameraSelectedCell : EditCardTableCell? //이거 바꿔보자
 }
 
 extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewDelegate {
     
-    // EditCardHeaderView Delegate
+    //MARK: - EditCardHeaderView Delegate
     func emptyViewTapped(cell: EditCardTableHeaderCell) {
         if isKeyboardShowing {
             if let textField = findFirstResponder() as? UITextField {
@@ -219,38 +252,54 @@ extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewD
             } else {
                 vc.state = EditCommentViewController.EditState.post
             }
-            present(vc, animated: true, completion: nil)
+            present(vc, animated: false, completion: nil)
         }
     }
     
     
-    // 입력 완료 시 콜백
+    // 제목
+    func titleEndEditting(text: String) {
+        card.title = text
+    }
+    
+    // 입력 완료 시 콜백 from EditCardTableCell
     func didEndEditing(tag: Int, text: String, trimmed: String) {
-        var voteItem : VoteItem?
-        voteItem = voteItems[tag - 1]
         
-        if voteItem == nil {
-            // 성성
-            voteItem = VoteItem()
+        let index = tag - 1
+        // 1. 빈 데이터 추가
+        if index == card.voteItems.count {
+            card.voteItems.append(VoteItem()) // Todo
+        }
+        // 2. data 변경
+        card.voteItems[index].text = text
+        card.toString()
+        // 3. 화면 변경
+        guard !trimmed.isEmpty else {
+            
+            return
         }
         
-        if trimmed.isEmpty {
-            voteItem?.text = nil
-        } else {
-            voteItem?.text = text
-            if tag == voteItems.count {
-                // append new Data
-                voteItems.append(VoteItem())
-                editCardTableView.reloadData()
-            }
-        }
+        guard index == self.optionItemCount - 1  else { return }
+        
+        self.optionItemCount += 1
+        self.editCardTableView.reloadData()
+        
 
-       
     }
+    
     // EditCardItemView Delegate
     func pickImageClick(cell: EditCardTableCell) {
         cameraSelectedCell = cell
         showAtionSheetForPhoto();
+    }
+    
+    func setCategory(selected: Category) {
+        let cell = editCardTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! EditCardTableHeaderCell
+        
+        cell.categoryButton.setTitle(selected.name, for: UIControlState.normal)
+        
+        // save category
+        card.category = selected
     }
 }
 
@@ -258,24 +307,25 @@ extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewD
 // MARK: - UIImagePickerController Delegate
 extension EditCardViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                if let editCell = cameraSelectedCell {
-                    editCell.btnCamera.setImage(image, for: .normal)
-                    editCardTableView.reloadData()
-//                    editCardTableView.indexPathForSelectedRow
-//                    editCardTableView.cellForRow(at: <#T##IndexPath#>)
-                }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if let editCell = cameraSelectedCell {
+                editCell.btnCamera.setImage(image, for: .normal)
+                editCardTableView.reloadData()
+                let index = editCell.tag - 1
+                card.voteItems[index].isImageSetted = true
+                card.voteItems[index].image = image
             }
-            
-            dismiss(animated: true, completion: nil)
-
         }
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
     
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.dismiss(animated: true, completion: nil)
-        }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - EditCommentViewController Delegate
@@ -287,7 +337,11 @@ extension EditCardViewController : EditCommentViewControllerDelegate {
         cell.descLabel.numberOfLines = 0
         cell.descLabel.sizeToFit()
         
+        // save desc
+        card.desc = message
+        
     }
 }
+
 
 

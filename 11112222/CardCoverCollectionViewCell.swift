@@ -10,11 +10,16 @@ import UIKit
 
 class CardCoverCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel : UILabel!
-
+    @IBOutlet weak var descLabel: UILabel!
     func configureCell(card: Card) {
         titleLabel.text = card.title
         titleLabel.numberOfLines = 0
         titleLabel.sizeToFit()
+        if let desc = card.desc {
+            descLabel.text = desc
+            descLabel.numberOfLines = 0
+            descLabel.sizeToFit()
+        }
     }
     
 }

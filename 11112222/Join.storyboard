@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="rSQ-7P-4km">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="jxj-Hd-GLA" customClass="LoginViewController" customModule="_1112222" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HWf-Wm-DCn"/>
+                        <viewControllerLayoutGuide type="bottom" id="DJU-dN-jKv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hNy-tf-2zY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11112222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXe-dZ-Ckg">
+                                <rect key="frame" x="112.5" y="314" width="151.5" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세상의 모든 고민 내가 결정해주마! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-MN-Ow7">
+                                <rect key="frame" x="16" y="285.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53A-RG-dfR">
+                                <rect key="frame" x="67.5" y="557" width="240" height="70"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutClick" destination="jxj-Hd-GLA" eventType="touchUpInside" id="B6M-CG-Nkk"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wcW-Cr-eiG">
+                                <rect key="frame" x="68" y="453" width="240" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDT-eo-w5A" customClass="GIDSignInButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="53A-RG-dfR" firstAttribute="top" secondItem="wcW-Cr-eiG" secondAttribute="bottom" constant="34" id="37y-7S-LO1"/>
+                            <constraint firstItem="53A-RG-dfR" firstAttribute="centerX" secondItem="hNy-tf-2zY" secondAttribute="centerX" id="5tG-de-2bu"/>
+                            <constraint firstItem="jXe-dZ-Ckg" firstAttribute="top" secondItem="eJu-MN-Ow7" secondAttribute="bottom" constant="8" id="FSZ-Qc-QLJ"/>
+                            <constraint firstItem="wcW-Cr-eiG" firstAttribute="leading" secondItem="hNy-tf-2zY" secondAttribute="leadingMargin" constant="52" id="OuY-Sk-Fri"/>
+                            <constraint firstItem="jXe-dZ-Ckg" firstAttribute="centerX" secondItem="hNy-tf-2zY" secondAttribute="centerX" id="Tll-fa-JYv"/>
+                            <constraint firstItem="eJu-MN-Ow7" firstAttribute="leading" secondItem="hNy-tf-2zY" secondAttribute="leadingMargin" id="aXL-na-4N3"/>
+                            <constraint firstItem="jXe-dZ-Ckg" firstAttribute="centerY" secondItem="hNy-tf-2zY" secondAttribute="centerY" id="kZv-lH-iZ5"/>
+                            <constraint firstItem="wcW-Cr-eiG" firstAttribute="centerX" secondItem="jXe-dZ-Ckg" secondAttribute="centerX" id="mUI-iE-Smi"/>
+                            <constraint firstItem="DJU-dN-jKv" firstAttribute="top" secondItem="53A-RG-dfR" secondAttribute="bottom" constant="40" id="o87-s4-NrP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eJu-MN-Ow7" secondAttribute="trailing" id="o94-Se-LXD"/>
+                            <constraint firstItem="53A-RG-dfR" firstAttribute="height" secondItem="TDT-eo-w5A" secondAttribute="height" id="u6U-0r-wUW"/>
+                            <constraint firstItem="TDT-eo-w5A" firstAttribute="centerX" secondItem="jXe-dZ-Ckg" secondAttribute="centerX" id="v3n-Xl-nGh"/>
+                            <constraint firstItem="53A-RG-dfR" firstAttribute="width" secondItem="TDT-eo-w5A" secondAttribute="width" id="yNN-lA-dvn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="53A-RG-dfR" id="2LR-Tz-cO1"/>
+                        <outlet property="signInButton" destination="TDT-eo-w5A" id="pFx-f5-MkC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eps-tV-tf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182" y="154"/>
+        </scene>
+    </scenes>
+</document>

@@ -8,12 +8,21 @@
 
 import Foundation
 import UIKit
+
 struct Category {
-    var image : UIImage
-    var name : String
-    
-    init(icon : UIImage, name: String) {
+    let image : UIImage
+    let name : String
+    let type : CategoryType
+    let id : String
+    init(type: CategoryType,id : String,icon : UIImage,name: String) {
         self.image = icon
         self.name = name
+        self.type = type
+        self.id = id
+    }
+    
+    enum CategoryType {
+        case home
+        case upload
     }
 }

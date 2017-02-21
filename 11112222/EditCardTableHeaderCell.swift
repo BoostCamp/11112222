@@ -10,13 +10,15 @@ import UIKit
 
 protocol EditCardHeaderViewDelegate {
     func emptyViewTapped(cell : EditCardTableHeaderCell)
+    func titleEndEditting(text : String)
 }
 
 class EditCardTableHeaderCell: UITableViewCell, UITextFieldDelegate {
-
+    
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var categoryButton: UIButton!
     
     var delegate : EditCardHeaderViewDelegate?
     override func awakeFromNib() {
@@ -33,10 +35,10 @@ class EditCardTableHeaderCell: UITableViewCell, UITextFieldDelegate {
         emptyView.addGestureRecognizer(tapGestureRecognizer)
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -47,5 +49,9 @@ class EditCardTableHeaderCell: UITableViewCell, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.titleEndEditting(text: textField.text!)
     }
 }

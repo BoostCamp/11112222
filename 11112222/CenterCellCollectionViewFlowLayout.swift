@@ -9,6 +9,8 @@
 import UIKit
 
 class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
+    override func prepare() {
+    }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
 //        print("start=====================================================================")
@@ -88,5 +90,19 @@ class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
         return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
 
     }
-
+    
+//    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+//        let attr = super.layoutAttributesForItem(at: indexPath)
+//        let cellFrame = CGRect.init(origin: (attr?.center)!, size: CGSize.init(width: (attr?.frame.size.width)! * 1.2, height: (attr?.frame.size.height)! * 1.2))
+//        
+//        attr?.frame = cellFrame
+//        
+//        return attr
+//    }
+    
+    
+//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//        return super.layoutAttributesForElements(in: rect)
+//    }
+    
 }
