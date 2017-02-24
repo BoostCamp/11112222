@@ -19,6 +19,8 @@ class EditCardTableHeaderCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var deadlineView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var delegate : EditCardHeaderViewDelegate?
     override func awakeFromNib() {
@@ -28,12 +30,12 @@ class EditCardTableHeaderCell: UITableViewCell, UITextFieldDelegate {
     
     func configureCell(){
         titleTextField.delegate = self
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(emptyViewTapped))
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(emptyViewTapped))
+
         emptyView.isUserInteractionEnabled = true
-        descLabel.addGestureRecognizer(tapGestureRecognizer2)
-        emptyView.addGestureRecognizer(tapGestureRecognizer)
+        descLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(emptyViewTapped)))
+        emptyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(emptyViewTapped)))
         
+        categoryButton.setTitleColor(UIColor.gray, for: .normal)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,7 +44,8 @@ class EditCardTableHeaderCell: UITableViewCell, UITextFieldDelegate {
         // Configure the view for the selected state
     }
     
-    func emptyViewTapped() {
+    @objc private func emptyViewTapped() {
+        print("1434235425")
         delegate?.emptyViewTapped(cell: self)
     }
     

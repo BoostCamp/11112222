@@ -13,7 +13,7 @@ protocol PlaceHolderTextViewDelegate {
 }
 
 @IBDesignable class PlaceHolderTextView: UIView, UITextViewDelegate {
-
+    
     var view : UIView?
     var isEmpty : Bool = true
     
@@ -28,10 +28,10 @@ protocol PlaceHolderTextViewDelegate {
     
     var delegate : PlaceHolderTextViewDelegate?
     func commonXibSetup() {
-    guard let view = loadViewFromNib() else
-    {
-        return
-    }
+        guard let view = loadViewFromNib() else
+        {
+            return
+        }
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)

@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 class LoginManager {
-    
+    private var currentUser : User?
     struct StaticInstance {
         static var instance: LoginManager?
     }
@@ -28,11 +28,21 @@ class LoginManager {
             let photoUrl = user.photoURL!
             let uid = user.uid
             
+            saveUserID(uid)
             print("name \(name) email \(email) photoUrl \(photoUrl) uid \(uid))")
             
             return true
         } else {
             return false
         }
+    }
+    
+    private func saveUserID(_ id: String) {
+        UserDefaults.standard.setValue(id, forKey: "uid")
+    }
+    
+    public func getUserID()-> String?{
+        let userdefault = UserDefaults.standard
+        return userdefault.value(forKey: "uid") as? String
     }
 }

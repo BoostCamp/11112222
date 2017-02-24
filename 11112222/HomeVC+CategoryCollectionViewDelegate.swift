@@ -21,7 +21,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         tempLabel.isHidden = true
         
         
-        size = CGSize(width: tempLabel.intrinsicContentSize.width + 56, height: 56)
+        size = CGSize(width: tempLabel.intrinsicContentSize.width + 28, height: 56)
         
         return size
     }
@@ -55,7 +55,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
         selectedCell.configureCell(selected: true)
-        
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         
         let category = categories[indexPath.row]
         fetchCardsData(with: category)

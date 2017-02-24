@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Nuke.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-11112222.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -28,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FB3581F4855FB816F0C4899ED1A6026</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6C12C76B09DBEB06CF35DC418E4BE03</key>
+		<key>F2EEF07BF8DEEF558F29BCA8B840402B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -22,40 +22,27 @@
                         <rect key="frame" x="4" y="8" width="101" height="50"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일상" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA3-Oy-pww">
-                        <rect key="frame" x="48" y="24.5" width="26" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="42" y="24.5" width="26" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="FUx-UR-Slx">
-                        <rect key="frame" x="8" y="17" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="32" id="SmT-mE-eML"/>
-                            <constraint firstAttribute="width" constant="32" id="qkX-VH-PZM"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="FUx-UR-Slx" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="7J8-ZE-FxG"/>
-                <constraint firstItem="ZA3-Oy-pww" firstAttribute="leading" secondItem="FUx-UR-Slx" secondAttribute="trailing" constant="8" id="JTh-4A-DhY"/>
                 <constraint firstItem="7ds-17-tMg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="QWj-sk-xfJ"/>
+                <constraint firstItem="ZA3-Oy-pww" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="WHs-HW-juP"/>
                 <constraint firstItem="7ds-17-tMg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="YVJ-Vn-TYq"/>
                 <constraint firstAttribute="bottom" secondItem="7ds-17-tMg" secondAttribute="bottom" constant="8" id="anm-Bf-TFN"/>
-                <constraint firstItem="FUx-UR-Slx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="bhq-De-lDW"/>
                 <constraint firstAttribute="trailing" secondItem="7ds-17-tMg" secondAttribute="trailing" constant="4" id="fWc-QQ-apY"/>
-                <constraint firstItem="ZA3-Oy-pww" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lsT-bP-REC"/>
+                <constraint firstItem="ZA3-Oy-pww" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qiU-yk-h7v"/>
             </constraints>
             <size key="customSize" width="109" height="66"/>
             <connections>
                 <outlet property="backgroundCategoryView" destination="7ds-17-tMg" id="2eG-tU-E3b"/>
-                <outlet property="iconView" destination="FUx-UR-Slx" id="QmO-YE-Yg8"/>
                 <outlet property="titleLabel" destination="ZA3-Oy-pww" id="WvO-wY-kRB"/>
             </connections>
             <point key="canvasLocation" x="-410.5" y="-351"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="pokemon" width="567" height="616"/>
-    </resources>
 </document>
