@@ -15,9 +15,13 @@ class CardItemCell: UICollectionViewCell{
     
     func goToResultViewController(_ sender: Any) {
         if let card = card {
-            print("card count \(card.voteCount!)")
-            print("card votes \(card.votes)")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: CardNotification.Name), object: card)
+        }
+    }
+    
+    func goToUserViewController(_sender: Any) {
+        if let card = card {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: CardNotification.User), object: card)
         }
     }
     
@@ -44,29 +48,6 @@ class CardItemCell: UICollectionViewCell{
             self.goResultButton.isHidden = false
             self.goResultButton.alpha = 1
         }
-    }
-    
-    private func setCardValueWithVote(_ voted: Bool, index: Int) {
-        if voted {
-            //            if let card = self.card {
-            //                card.isVoted = true
-            //                let userID = UserDefaults.standard.value(forKey: "uid")
-            //                if var voteCount = card.voteCount, var votes = card.votes {
-            //                    voteCount = voteCount + 1
-            //                    votes.updateValue(card.voteItems[index].id, forKey: userID!)
-            //                } else {
-            //                    let votes = [String:String]()
-            //                    card.voteCount = 1
-            //                    votes.updateValue(card.voteItems[index].id, forKey: userID!)
-            //                    card.votes = votes
-            //                }
-            //
-            //            }
-            
-            
-        }
-        
-        
     }
     
     func checkIfUserVotedAndShowCheckMark(vote : VoteItem) {

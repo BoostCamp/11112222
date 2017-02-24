@@ -121,14 +121,15 @@ extension Date {
         return Date(timeInterval: 0, since: date)
     }
     
-    static func localTime(date: Date) -> String {
+    static func localTime(date: Date) -> Date {
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         //        let hour = calendar.component(.hour, from: date)
         //        let minutes = calendar.component(.minute, from: date)
-        return "\(year).\(month).\(day)"
+        
+        return getDateFromString("\(year).\(month).\(day)")
     }
     
     

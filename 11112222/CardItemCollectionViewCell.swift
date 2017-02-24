@@ -23,6 +23,11 @@ class CardItemCollectionViewCell: CardItemCell {
             }
         }
         checkIfUserVotedAndShowCheckMark(vote: item)
+        
+        
+        goResultButton.isHidden = true
+
+        
     }
     
 }

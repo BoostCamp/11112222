@@ -22,5 +22,6 @@ class CardItemOnlyTextCollectionCell: CardItemCell {
         descriptionLabel.frame = CGRect(x: 10, y: 10, width: desiredLabelWidth, height: size.height)
         
         checkIfUserVotedAndShowCheckMark(vote: item)
+        goResultButton.isHidden = true
     }
 }

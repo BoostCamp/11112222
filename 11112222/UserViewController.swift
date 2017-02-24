@@ -11,7 +11,7 @@ import Nuke
 
 class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var cards = [Card]()
-    let userID : String = ""
+    var userID : String = ""
     @IBOutlet weak var voteCount: UILabel!
     @IBOutlet weak var postCount: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -29,6 +29,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.cards = cards
             self.collectionView.reloadData()
             self.voteCount.text = String(cards.count)
+            self.voteCount.isHidden = false
         }
         
         setupFlowLayout()

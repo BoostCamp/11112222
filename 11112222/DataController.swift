@@ -165,6 +165,10 @@ class DataController : NSObject {
                 cardBody.updateValue(photoUrl, forKey: "photoURL")
             }
             
+            if let body = card.desc {
+                cardBody.updateValue(body, forKey: "body")
+            }
+            
             if let voteItems = votes {
                 cardBody.updateValue(voteItems, forKey: "vote-items")
             }
@@ -227,6 +231,9 @@ class DataController : NSObject {
     
     // 투표
     public func vote(to voteItem: VoteItem,_ card: Card, completed: @escaping (Bool)->Void ) {
+        var userVoteCount: Int?
+        var userVotes : [String:String]?
+        
         cardRef.child(card.cardID!).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
             if var card = currentData.value as? [String: AnyObject], let uid = FIRAuth.auth()?.currentUser?.uid {
                 
@@ -244,7 +251,8 @@ class DataController : NSObject {
                 }
                 card["voteCount"] = voteCount as AnyObject?
                 card["votes"] = votes as AnyObject?
-                
+                userVoteCount = voteCount
+                userVotes = votes
                 currentData.value = card
                 return FIRTransactionResult.success(withValue: currentData)
                 
@@ -256,7 +264,23 @@ class DataController : NSObject {
                 print(error.localizedDescription)
             }
             if committed {
-                completed(committed)
+                if let uid = FIRAuth.auth()?.currentUser?.uid {
+                    if let votes = userVotes, let count = userVoteCount {
+                        let updates = ["voteCount": count, "votes": votes] as [String : Any]
+                        
+                        if let ownerID = card.uid {
+                            self.baseRef.child("user-posts").child(ownerID).child(card.cardID!).updateChildValues(updates, withCompletionBlock: { (error, reference) in
+                                if let error = error {
+                                    print(error.localizedDescription)
+                                    completed(false)
+                                }
+                                completed(true)
+                            })
+                        }
+                        
+                    }
+
+                }
                 
                 
             }
@@ -299,7 +323,7 @@ class DataController : NSObject {
         var query : FIRDatabaseQuery!
         switch by {
         case "lastest":
-            query = cardRef.queryOrdered(byChild:"timestamp")
+            query = cardRef.queryOrderedByPriority()
         case "deadline":
             let current = Util.getCurrentTimeStamp()
             query = cardRef.queryOrdered(byChild:"deadLine").queryStarting(atValue: current)

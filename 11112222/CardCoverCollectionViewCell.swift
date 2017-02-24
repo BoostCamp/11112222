@@ -19,6 +19,7 @@ class CardCoverCollectionViewCell: CardItemCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToUserViewController(_sender:))))
     }
     
     func configureCell(card: Card) {
@@ -40,9 +41,11 @@ class CardCoverCollectionViewCell: CardItemCell {
         titleLabel.frame = CGRect(x: 10, y: 10, width: desiredLabelWidth, height: size.height)
         
         if let desc = card.desc {
+            
             descLabel.text = desc
             let descSize = descLabel.sizeThatFits(CGSize(width: desiredLabelWidth, height: CGFloat.greatestFiniteMagnitude))
             descLabel.frame = CGRect(x: 10, y: size.height+10, width: desiredLabelWidth, height: descSize.height)
+            descLabel.isHidden = false
         } else {
             descLabel.isHidden = true
         }

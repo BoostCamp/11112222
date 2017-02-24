@@ -30,7 +30,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cancelButton.tintColor = UIColor.FlatColor.AppColor.ChiliPepper
-        doneButton.tintColor = UIColor.gray
+        doneButton.tintColor = UIColor.FlatColor.AppColor.ChiliPepper
         subscribeToKeyboardNotifications()
     }
     
@@ -58,6 +58,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func onNextClick(_ sender: Any) {
         if card.isPostable {
             DataController.sharedInstance().delegate = self
+            print("ffffff\(card.desc)")
             DataController.sharedInstance().postCard(card: self.card)
         } else {
             showAlertView()
@@ -396,7 +397,7 @@ extension EditCardViewController : DeadLinePickerCellDelegate {
     func pickerValueChanged(date: Date) {
         if let cell = editCardTableView.cellForRow(at: IndexPath(row:1, section:0)){
             if let label = cell.contentView.viewWithTag(20) {
-                card._deadLine = date
+                card._deadLine = Date.localTime(date: date)
                 let dateLabel = label as! UILabel
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = DateFormatter.Style.short

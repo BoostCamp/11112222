@@ -21,26 +21,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         //register nib for collectionView
         let nib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
-
-
+        
+        
         categoryCollectionView.register(nib, forCellWithReuseIdentifier: "categoryCell")
         self.tabBarController?.delegate = self
         
         // add observer
         NotificationCenter.default.addObserver(self, selector: #selector(goToResultViewController), name: NSNotification.Name(rawValue: CardNotification.Name), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(goToUserViewController), name: NSNotification.Name(rawValue: CardNotification.User), object: nil)
     }
     
     deinit {
-
+        
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: CardNotification.Name), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: CardNotification.User), object: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +65,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+    
+    @objc private func goToUserViewController(notification: Notification){
+        if let card = notification.object as? Card {
+            let storyboard = self.storyboard
+            if let resultVC = storyboard?.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController {
+                resultVC.userID = card.uid!
+                present(resultVC, animated: true, completion: nil)
+            }
+        }
+    }
+
     
     func fetchCardsData(with category: Category) {
         
@@ -105,7 +119,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return self.view.frame.width
     }
     
-
+    
 }
 
 // MARK: - TabBarContoller Delegate

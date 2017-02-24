@@ -86,7 +86,7 @@
 		8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		8362B1D31E5BCD930025C98B /* HomeVC+CategoryCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVC+CategoryCollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
-		8366252F1E4993EF002676E5 /* 11112222.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 11112222.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8366252F1E4993EF002676E5 /* VOTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836625321E4993EF002676E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		836625341E4993EF002676E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		836625371E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 		836625301E4993EF002676E5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8366252F1E4993EF002676E5 /* 11112222.app */,
+				8366252F1E4993EF002676E5 /* VOTE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 			);
 			name = 11112222;
 			productName = 11112222;
-			productReference = 8366252F1E4993EF002676E5 /* 11112222.app */;
+			productReference = 8366252F1E4993EF002676E5 /* VOTE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -621,7 +621,7 @@
 				INFOPLIST_FILE = 11112222/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dongyoon.-1112222";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VOTE;
 				SWIFT_OBJC_BRIDGING_HEADER = "11112222/11112222-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -638,7 +638,7 @@
 				INFOPLIST_FILE = 11112222/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dongyoon.-1112222";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VOTE;
 				SWIFT_OBJC_BRIDGING_HEADER = "11112222/11112222-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

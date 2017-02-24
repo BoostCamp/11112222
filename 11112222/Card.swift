@@ -11,6 +11,7 @@ import Firebase
 
 struct CardNotification {
     static let Name = "CardNotification"
+    static let User = "UserNotification"
 }
 
 class Card : NSObject {
@@ -52,8 +53,12 @@ class Card : NSObject {
     }
     
     init(dic: Dictionary<String, Any>) {
-        uid = (dic["uid"] as? String)!
-        username = (dic["author"] as? String)!
+        if let id = dic["uid"] as? String {
+            uid = id
+        }
+        if let name = dic["author"] as? String {
+            username = name
+        }
         if let photoURL = dic["photoURL"] as? String {
             self.photoURL = photoURL
         }
@@ -73,9 +78,18 @@ class Card : NSObject {
             _deadLine = Date(timeIntervalSince1970: deadLine / 1000)
         }
         
-        voteCount = dic["voteCount"] as? Int ?? 0
         
-        votes = dic["votes"] as? [String : String] ?? [:]
+        if let voteCount = dic["voteCount"] as? Int {
+            self.voteCount = voteCount
+        } else {
+            self.voteCount = 0
+        }
+        
+        if let votes = dic["votes"] as? [String : String] {
+            self.votes = votes
+        } else {
+            self.votes = [:]
+        }
         
         print("voteCount \(voteCount)")
         print("voteCount \(votes)")

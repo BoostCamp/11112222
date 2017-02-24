@@ -80,7 +80,14 @@ class CardTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     
     // MARK: - CollectionView Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("투표상태 \(card.isVoted)")
+        
+        if let date = card._deadLine {
+            let createAt = Util.timeLeftFromNow(date)
+            if !createAt.0 {
+                return
+            }
+        }
+        
         if indexPath.row > 0 && !card.isVoted {
             let voteIndex = indexPath.row - 1 // 커버 빼주기
             let voteItem = self.card.voteItems[voteIndex]
@@ -89,6 +96,7 @@ class CardTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
             if let cell = collectionView.cellForItem(at: indexPath) as? CardItemCell{
                 dataContoller.vote(to: voteItem, self.card) { (committed) in
                     if committed {
+                        print(committed)
                         cell.card = dataContoller.successVoteToCard(at: self.index, selectedVote: voteItem)
                         print(dataContoller.successVoteToCard(at: self.index, selectedVote: voteItem).voteCount!)
                         print("card count \(cell.card?.voteCount!)")
