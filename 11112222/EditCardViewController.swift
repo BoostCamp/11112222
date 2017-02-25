@@ -13,19 +13,24 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Properties
     @IBOutlet weak var editCardTableView : UITableView!
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     var card = Card()
     var optionItemCount = 2
+    private var dpShowDateVisible = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
         editCardTableView.rowHeight = UITableViewAutomaticDimension
         editCardTableView.estimatedRowHeight = 100
-        editCardTableView.allowsSelection = false // selection false
+        editCardTableView.allowsSelection = true // selection false
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        cancelButton.tintColor = UIColor.FlatColor.AppColor.ChiliPepper
+        doneButton.tintColor = UIColor.FlatColor.AppColor.ChiliPepper
         subscribeToKeyboardNotifications()
     }
     
@@ -39,6 +44,12 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewWillDisappear(animated)
     }
     
+    private func toggleShowDateDatepicker () {
+        dpShowDateVisible = !dpShowDateVisible
+        
+        editCardTableView.beginUpdates()
+        editCardTableView.endUpdates()
+    }
     // MARK: - Action
     @IBAction func onCancelClick() {
         dismiss(animated: true, completion: nil)
@@ -47,7 +58,8 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func onNextClick(_ sender: Any) {
         if card.isPostable {
             DataController.sharedInstance().delegate = self
-            DataController.sharedInstance().postCardIntoFirebase(card: self.card)
+            print("ffffff\(card.desc)")
+            DataController.sharedInstance().postCard(card: self.card)
         } else {
             showAlertView()
         }
@@ -117,17 +129,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row != 0 {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "editCardCell", for: indexPath) as! EditCardTableCell
-            cell.optionLabel.placeholder = "option \(indexPath.row)"
-            //            cell.btnCamera.tag = indexPath.row
-            cell.tag = indexPath.row
-            cell.configureCell()
-            cell.delegate = self
-            //            cell.btnCamera.addTarget(self, action:#selector(showAtionSheetForPhoto(_:)), for: UIControlEvents.touchUpInside)
-            return cell
-        } else {
+        if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "editCardHeaderCell") as! EditCardTableHeaderCell
             cell.configureCell()
             cell.delegate = self
@@ -135,14 +137,63 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
             
             cell.tag = indexPath.row
             return cell
+            
+        } else if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dpShowCell", for: indexPath)
+            return cell
+        } else if indexPath.row == 2{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell") as! DeadLinePickerCell
+            cell.delegate = self
+            cell.configureCell()
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "editCardCell", for: indexPath) as! EditCardTableCell
+            cell.optionLabel.placeholder = "option \(indexPath.row-2)"
+            cell.tag = indexPath.row
+            cell.configureCell()
+            cell.delegate = self
+            return cell
+            
         }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionItemCount + 1 // 1은 0번째 로우
+        return optionItemCount + 3 // category,title,description, pickerview,
     }
     
+    
+    
     // MARK: - TableView Delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            
+            toggleShowDateDatepicker()
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height = self.editCardTableView.rowHeight
+        guard indexPath.row != 2 else {
+            if !dpShowDateVisible && indexPath.row == 2{
+                if tableView.cellForRow(at: indexPath) != nil{
+                    let cell = tableView.cellForRow(at: indexPath) as! DeadLinePickerCell
+                    cell.datePickerView.isHidden = true
+                }
+                height = 0
+            } else {
+                if tableView.cellForRow(at: indexPath) != nil{
+                    let cell = tableView.cellForRow(at: indexPath) as! DeadLinePickerCell
+                    cell.datePickerView.isHidden = false
+                }
+            }
+            return height
+        }
+        
+        return height
+    }
     
     
     // MARK: - calculate over rapping keyboard and hide & show keyboard
@@ -224,6 +275,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Navigation
     @IBAction func unwindToEditCardEditController(segue: UIStoryboardSegue) {
+        
     }
     
     func goToCategoryController() {
@@ -233,7 +285,7 @@ class EditCardViewController: UIViewController, UITableViewDataSource, UITableVi
     var cameraSelectedCell : EditCardTableCell? //이거 바꿔보자
 }
 
-extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewDelegate {
+extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewDelegate{
     
     //MARK: - EditCardHeaderView Delegate
     func emptyViewTapped(cell: EditCardTableHeaderCell) {
@@ -256,6 +308,7 @@ extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewD
         }
     }
     
+    //MARK: - UIPickerViewDelegate
     
     // 제목
     func titleEndEditting(text: String) {
@@ -265,7 +318,7 @@ extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewD
     // 입력 완료 시 콜백 from EditCardTableCell
     func didEndEditing(tag: Int, text: String, trimmed: String) {
         
-        let index = tag - 1
+        let index = tag - 3
         // 1. 빈 데이터 추가
         if index == card.voteItems.count {
             card.voteItems.append(VoteItem()) // Todo
@@ -278,13 +331,9 @@ extension EditCardViewController : EditCardHeaderViewDelegate, EditCardItemViewD
             
             return
         }
-        
         guard index == self.optionItemCount - 1  else { return }
-        
         self.optionItemCount += 1
-        self.editCardTableView.reloadData()
-        
-
+        self.editCardTableView.insertRows(at:[IndexPath(row:optionItemCount+2,section:0)], with: .fade) // 나중에 고치자!!!!
     }
     
     // EditCardItemView Delegate
@@ -313,7 +362,7 @@ extension EditCardViewController : UIImagePickerControllerDelegate, UINavigation
             if let editCell = cameraSelectedCell {
                 editCell.btnCamera.setImage(image, for: .normal)
                 editCardTableView.reloadData()
-                let index = editCell.tag - 1
+                let index = editCell.tag - 3
                 card.voteItems[index].isImageSetted = true
                 card.voteItems[index].image = image
             }
@@ -343,5 +392,21 @@ extension EditCardViewController : EditCommentViewControllerDelegate {
     }
 }
 
-
-
+extension EditCardViewController : DeadLinePickerCellDelegate {
+    
+    func pickerValueChanged(date: Date) {
+        if let cell = editCardTableView.cellForRow(at: IndexPath(row:1, section:0)){
+            if let label = cell.contentView.viewWithTag(20) {
+                card._deadLine = Date.localTime(date: date)
+                let dateLabel = label as! UILabel
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = DateFormatter.Style.short
+                dateFormatter.timeStyle = DateFormatter.Style.none
+                let strDate = dateFormatter.string(from: date)
+                dateLabel.text = strDate
+                editCardTableView.reloadData()
+            }
+            
+        }
+    }
+}

@@ -10,11 +10,10 @@ import Foundation
 
 class User : NSObject{
     // MARK: Properties
+    var userID : String?
     var name: String?
     var image: String?
-    
     var isOwner : Bool?
-    
     var postHistory: [Card]? // 포스트 히스토리
     var voteHistory: [Card]? // 투표 히스토리
     
@@ -23,13 +22,11 @@ class User : NSObject{
 
     init(name: String, isOwner : Bool = false) {
         self.name = name
-        
         self.isOwner = isOwner
     }
     
     init(dic: Dictionary<String, Any>) {
-        name = dic["username"] as! String?
+        name = dic["username"] as? String ?? "익명유저"
         image = dic["profile"] as? String ?? ""
-        isOwner = true
     }
 }

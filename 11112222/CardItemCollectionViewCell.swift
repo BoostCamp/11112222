@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import Nuke
 
-class CardItemCollectionViewCell: UICollectionViewCell {
+class CardItemCollectionViewCell: CardItemCell {
     
-    @IBOutlet weak var optionImageView: UIImageView!
-    
-    func configureCell(item: VoteItem) -> Void {
-        if let image = item.image {
-            optionImageView.image = image
-        }
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
+    @IBOutlet weak var optionImageView: UIImageView!
+    func configureCell(item: VoteItem){
+        optionImageView.image = nil
+        if let imageUrl = item.imageUrl {
+            if let url = URL.init(string: imageUrl){
+                Nuke.loadImage(with: url, into: optionImageView)
+            }
+        }
+        checkIfUserVotedAndShowCheckMark(vote: item)
+        
+        
+        goResultButton.isHidden = true
+
+        
+    }
+    
 }

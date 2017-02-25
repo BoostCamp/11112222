@@ -20,6 +20,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var signInButton: GIDSignInButton!
     
+    @IBOutlet weak var iconView: UIImageView!
+    
     var delegate : LoginViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,16 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         
         
         logoutButton.backgroundColor = UIColor.FlatColor.Gray.WhiteSmoke
+        
+        self.view.backgroundColor = UIColor.FlatColor.Gray.AlmondFrost
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 10) {
+            self.iconView.alpha = 1
+            self.iconView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+        }
     }
     
     // IBAction

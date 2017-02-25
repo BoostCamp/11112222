@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8311D32D1E5C82220024DB4A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8311D32C1E5C82220024DB4A /* Util.swift */; };
 		831964211E5B150D00C13B52 /* CategoryGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831964201E5B150D00C13B52 /* CategoryGenerator.swift */; };
 		831EE72E1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831EE72C1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift */; };
 		831EE72F1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831EE72D1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib */; };
 		832ED52F1E4B502100F79F8C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED52E1E4B502100F79F8C /* DataController.swift */; };
 		832ED5311E4C073F00F79F8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED5301E4C073F00F79F8C /* Category.swift */; };
+		83304F021E5C1C270047E79B /* CardItemOnlyTextCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83304F011E5C1C270047E79B /* CardItemOnlyTextCollectionCell.swift */; };
 		8343FF2F1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343FF2E1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift */; };
+		8349EE2B1E5EB1540010AC62 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349EE2A1E5EB1540010AC62 /* Scalable.swift */; };
+		8349EE2D1E5EB1EA0010AC62 /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349EE2C1E5EB1EA0010AC62 /* CheckMarkView.swift */; };
+		8349EE2F1E5EBE560010AC62 /* CardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349EE2E1E5EBE560010AC62 /* CardItemCell.swift */; };
+		8349EE361E5EDCCE0010AC62 /* VoteResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8349EE351E5EDCCE0010AC62 /* VoteResult.storyboard */; };
+		8350BF181E5F0D8F003CFDE0 /* VoteResultHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350BF171E5F0D8F003CFDE0 /* VoteResultHeaderCell.swift */; };
+		8350BF1A1E5F10EF003CFDE0 /* VoteResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350BF191E5F10EF003CFDE0 /* VoteResultViewController.swift */; };
 		8353802E1E56C148002F7D1A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8353802D1E56C148002F7D1A /* UIColor+Hex.swift */; };
 		835380391E56D4EC002F7D1A /* Join.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835380381E56D4EC002F7D1A /* Join.storyboard */; };
 		8353803B1E56D5A7002F7D1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8353803A1E56D5A7002F7D1A /* LoginViewController.swift */; };
@@ -24,20 +32,26 @@
 		8363E6B31E4AC89A00CE23B3 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */; };
 		836625331E4993EF002676E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625321E4993EF002676E5 /* AppDelegate.swift */; };
 		836625351E4993EF002676E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625341E4993EF002676E5 /* HomeViewController.swift */; };
-		836625381E4993EF002676E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836625361E4993EF002676E5 /* Main.storyboard */; };
 		8366253A1E4993EF002676E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836625391E4993EF002676E5 /* Assets.xcassets */; };
 		8366253D1E4993EF002676E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */; };
 		836625471E49AC94002676E5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625461E49AC94002676E5 /* Card.swift */; };
 		836625491E49AD67002676E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836625481E49AD67002676E5 /* User.swift */; };
 		8366254B1E49ADA6002676E5 /* CardComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366254A1E49ADA6002676E5 /* CardComment.swift */; };
 		8366254D1E49B3FA002676E5 /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366254C1E49B3FA002676E5 /* VoteItem.swift */; };
+		8366D9BC1E6061EF0092B885 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366D9BB1E6061EF0092B885 /* GradientView.swift */; };
+		8366D9BE1E6064500092B885 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366D9BD1E6064500092B885 /* CardCollectionViewCell.swift */; };
+		836B295D1E5C64E900C75251 /* DeadLinePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B295C1E5C64E900C75251 /* DeadLinePickerCell.swift */; };
 		8380B6EF1E52B541004C843E /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380B6EE1E52B541004C843E /* PlaceHolderTextView.swift */; };
 		8380B6F31E52B81A004C843E /* PlaceHolderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8380B6F21E52B81A004C843E /* PlaceHolderTextView.xib */; };
 		8398B14E1E49BC8B000FA81B /* EditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14D1E49BC8B000FA81B /* EditCardViewController.swift */; };
 		8398B1501E49BDAD000FA81B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B14F1E49BDAD000FA81B /* UserViewController.swift */; };
 		8398B1521E49BDC9000FA81B /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398B1511E49BDC9000FA81B /* EditCommentViewController.swift */; };
+		839B06F81E5FD75F001F8E98 /* VoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839B06F71E5FD75F001F8E98 /* VoteResultView.swift */; };
+		83A4E4541E6015F3009BE86A /* VoteResultBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4E4531E6015F3009BE86A /* VoteResultBodyTableViewCell.swift */; };
+		83A4E4561E601E5D009BE86A /* VoteResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4E4551E601E5D009BE86A /* VoteResultHeaderView.swift */; };
 		83B8B03F1E5414AB00CC6FF6 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B8B03E1E5414AB00CC6FF6 /* CategoryTableViewController.swift */; };
 		83B8B0411E5417C300CC6FF6 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B8B0401E5417C300CC6FF6 /* CategoryTableViewCell.swift */; };
+		83BF66741E5EA8C60081EDEA /* Pollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF66731E5EA8C60081EDEA /* Pollable.swift */; };
 		83C93B1F1E51635A00E47ADF /* CardCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */; };
 		83E08C581E4D8FB4002F245D /* EditCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E08C571E4D8FB4002F245D /* EditCardTableCell.swift */; };
 		83E08C5A1E4DA022002F245D /* EditCardTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E08C591E4DA022002F245D /* EditCardTableHeaderCell.swift */; };
@@ -47,12 +61,20 @@
 
 /* Begin PBXFileReference section */
 		7B6DEDADCC85401501FA0D05 /* Pods_11112222.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_11112222.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8311D32C1E5C82220024DB4A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		831964201E5B150D00C13B52 /* CategoryGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryGenerator.swift; sourceTree = "<group>"; };
 		831EE72C1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		831EE72D1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		832ED52E1E4B502100F79F8C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		832ED5301E4C073F00F79F8C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		83304F011E5C1C270047E79B /* CardItemOnlyTextCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItemOnlyTextCollectionCell.swift; sourceTree = "<group>"; };
 		8343FF2E1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		8349EE2A1E5EB1540010AC62 /* Scalable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scalable.swift; sourceTree = "<group>"; };
+		8349EE2C1E5EB1EA0010AC62 /* CheckMarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
+		8349EE2E1E5EBE560010AC62 /* CardItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItemCell.swift; sourceTree = "<group>"; };
+		8349EE351E5EDCCE0010AC62 /* VoteResult.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VoteResult.storyboard; sourceTree = "<group>"; };
+		8350BF171E5F0D8F003CFDE0 /* VoteResultHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteResultHeaderCell.swift; sourceTree = "<group>"; };
+		8350BF191E5F10EF003CFDE0 /* VoteResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteResultViewController.swift; sourceTree = "<group>"; };
 		8353802D1E56C148002F7D1A /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		835380351E56D0F1002F7D1A /* 11112222-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "11112222-Bridging-Header.h"; sourceTree = "<group>"; };
 		835380381E56D4EC002F7D1A /* Join.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Join.storyboard; sourceTree = "<group>"; };
@@ -63,10 +85,9 @@
 		8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		8362B1D31E5BCD930025C98B /* HomeVC+CategoryCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVC+CategoryCollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
-		8366252F1E4993EF002676E5 /* 11112222.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 11112222.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8366252F1E4993EF002676E5 /* VOTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836625321E4993EF002676E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		836625341E4993EF002676E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		836625371E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		836625391E4993EF002676E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8366253C1E4993EF002676E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8366253E1E4993EF002676E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,13 +95,20 @@
 		836625481E49AD67002676E5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8366254A1E49ADA6002676E5 /* CardComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComment.swift; sourceTree = "<group>"; };
 		8366254C1E49B3FA002676E5 /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
+		8366D9BB1E6061EF0092B885 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		8366D9BD1E6064500092B885 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		836B295C1E5C64E900C75251 /* DeadLinePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadLinePickerCell.swift; sourceTree = "<group>"; };
 		8380B6EE1E52B541004C843E /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		8380B6F21E52B81A004C843E /* PlaceHolderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceHolderTextView.xib; sourceTree = "<group>"; };
 		8398B14D1E49BC8B000FA81B /* EditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardViewController.swift; sourceTree = "<group>"; };
 		8398B14F1E49BDAD000FA81B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		8398B1511E49BDC9000FA81B /* EditCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
+		839B06F71E5FD75F001F8E98 /* VoteResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteResultView.swift; sourceTree = "<group>"; };
+		83A4E4531E6015F3009BE86A /* VoteResultBodyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteResultBodyTableViewCell.swift; sourceTree = "<group>"; };
+		83A4E4551E601E5D009BE86A /* VoteResultHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteResultHeaderView.swift; sourceTree = "<group>"; };
 		83B8B03E1E5414AB00CC6FF6 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		83B8B0401E5417C300CC6FF6 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		83BF66731E5EA8C60081EDEA /* Pollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollable.swift; sourceTree = "<group>"; };
 		83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		83E08C571E4D8FB4002F245D /* EditCardTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardTableCell.swift; sourceTree = "<group>"; };
 		83E08C591E4DA022002F245D /* EditCardTableHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardTableHeaderCell.swift; sourceTree = "<group>"; };
@@ -120,16 +148,27 @@
 			name = DataControllers;
 			sourceTree = "<group>";
 		};
+		83304F001E5C1BE80047E79B /* ItemCells */ = {
+			isa = PBXGroup;
+			children = (
+				83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */,
+				8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */,
+				83304F011E5C1C270047E79B /* CardItemOnlyTextCollectionCell.swift */,
+				83BF66731E5EA8C60081EDEA /* Pollable.swift */,
+				8349EE2E1E5EBE560010AC62 /* CardItemCell.swift */,
+			);
+			name = ItemCells;
+			sourceTree = "<group>";
+		};
 		834656981E50470A0092FEE8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				83304F001E5C1BE80047E79B /* ItemCells */,
 				831EE72C1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift */,
 				831EE72D1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib */,
 				836625341E4993EF002676E5 /* HomeViewController.swift */,
 				8362B1D31E5BCD930025C98B /* HomeVC+CategoryCollectionViewDelegate.swift */,
 				8363E6B11E4AC89A00CE23B3 /* CardTableViewCell.swift */,
-				83C93B1E1E51635A00E47ADF /* CardCoverCollectionViewCell.swift */,
-				8361AF741E4B0D0400C73D9E /* CardItemCollectionViewCell.swift */,
 				8343FF2E1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift */,
 			);
 			name = Main;
@@ -144,6 +183,7 @@
 				83E08C571E4D8FB4002F245D /* EditCardTableCell.swift */,
 				83E08C591E4DA022002F245D /* EditCardTableHeaderCell.swift */,
 				83B8B0401E5417C300CC6FF6 /* CategoryTableViewCell.swift */,
+				836B295C1E5C64E900C75251 /* DeadLinePickerCell.swift */,
 			);
 			name = Edit;
 			sourceTree = "<group>";
@@ -152,14 +192,29 @@
 			isa = PBXGroup;
 			children = (
 				8398B14F1E49BDAD000FA81B /* UserViewController.swift */,
+				8366D9BD1E6064500092B885 /* CardCollectionViewCell.swift */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		8349EE321E5ED0920010AC62 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				8349EE351E5EDCCE0010AC62 /* VoteResult.storyboard */,
+				839B06F71E5FD75F001F8E98 /* VoteResultView.swift */,
+				8350BF171E5F0D8F003CFDE0 /* VoteResultHeaderCell.swift */,
+				8350BF191E5F10EF003CFDE0 /* VoteResultViewController.swift */,
+				83A4E4531E6015F3009BE86A /* VoteResultBodyTableViewCell.swift */,
+				83A4E4551E601E5D009BE86A /* VoteResultHeaderView.swift */,
+			);
+			name = Vote;
 			sourceTree = "<group>";
 		};
 		8353802C1E56C12B002F7D1A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				8353802D1E56C148002F7D1A /* UIColor+Hex.swift */,
+				8311D32C1E5C82220024DB4A /* Util.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -167,6 +222,7 @@
 		8363E6AE1E4AC41600CE23B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8349EE321E5ED0920010AC62 /* Vote */,
 				83A1E6BA1E55E35300367D5E /* Join */,
 				834656981E50470A0092FEE8 /* Main */,
 				8346569A1E5047310092FEE8 /* User */,
@@ -188,7 +244,7 @@
 		836625301E4993EF002676E5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8366252F1E4993EF002676E5 /* 11112222.app */,
+				8366252F1E4993EF002676E5 /* VOTE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,7 +259,6 @@
 				836625441E49AA7D002676E5 /* Models */,
 				8363E6AE1E4AC41600CE23B3 /* Views */,
 				836625321E4993EF002676E5 /* AppDelegate.swift */,
-				836625361E4993EF002676E5 /* Main.storyboard */,
 				836625391E4993EF002676E5 /* Assets.xcassets */,
 				8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */,
 				8366253E1E4993EF002676E5 /* Info.plist */,
@@ -237,8 +292,11 @@
 		8380B6ED1E52B4F6004C843E /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				8349EE2A1E5EB1540010AC62 /* Scalable.swift */,
+				8349EE2C1E5EB1EA0010AC62 /* CheckMarkView.swift */,
 				8380B6EE1E52B541004C843E /* PlaceHolderTextView.swift */,
 				8380B6F21E52B81A004C843E /* PlaceHolderTextView.xib */,
+				8366D9BB1E6061EF0092B885 /* GradientView.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -280,7 +338,7 @@
 			);
 			name = 11112222;
 			productName = 11112222;
-			productReference = 8366252F1E4993EF002676E5 /* 11112222.app */;
+			productReference = 8366252F1E4993EF002676E5 /* VOTE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -325,9 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				831EE72F1E4C21A100FC3DF9 /* CategoryCollectionViewCell.xib in Resources */,
+				8349EE361E5EDCCE0010AC62 /* VoteResult.storyboard in Resources */,
 				8366253D1E4993EF002676E5 /* LaunchScreen.storyboard in Resources */,
 				8366253A1E4993EF002676E5 /* Assets.xcassets in Resources */,
-				836625381E4993EF002676E5 /* Main.storyboard in Resources */,
 				8380B6F31E52B81A004C843E /* PlaceHolderTextView.xib in Resources */,
 				835380391E56D4EC002F7D1A /* Join.storyboard in Resources */,
 				835380471E56FAA0002F7D1A /* GoogleService-Info.plist in Resources */,
@@ -392,7 +450,10 @@
 				831EE72E1E4C21A100FC3DF9 /* CategoryCollectionViewCell.swift in Sources */,
 				8398B14E1E49BC8B000FA81B /* EditCardViewController.swift in Sources */,
 				8353802E1E56C148002F7D1A /* UIColor+Hex.swift in Sources */,
+				8366D9BC1E6061EF0092B885 /* GradientView.swift in Sources */,
+				8366D9BE1E6064500092B885 /* CardCollectionViewCell.swift in Sources */,
 				835380451E56ED6D002F7D1A /* RootTabBarViewController.swift in Sources */,
+				836B295D1E5C64E900C75251 /* DeadLinePickerCell.swift in Sources */,
 				8363E6B31E4AC89A00CE23B3 /* CardTableViewCell.swift in Sources */,
 				83EF04201E58242A004E0FDE /* LoginManager.swift in Sources */,
 				8366254D1E49B3FA002676E5 /* VoteItem.swift in Sources */,
@@ -400,6 +461,8 @@
 				8366254B1E49ADA6002676E5 /* CardComment.swift in Sources */,
 				836625491E49AD67002676E5 /* User.swift in Sources */,
 				8343FF2F1E50749D0036F9F9 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
+				83304F021E5C1C270047E79B /* CardItemOnlyTextCollectionCell.swift in Sources */,
+				83BF66741E5EA8C60081EDEA /* Pollable.swift in Sources */,
 				83E08C581E4D8FB4002F245D /* EditCardTableCell.swift in Sources */,
 				8361AF751E4B0D0400C73D9E /* CardItemCollectionViewCell.swift in Sources */,
 				83C93B1F1E51635A00E47ADF /* CardCoverCollectionViewCell.swift in Sources */,
@@ -408,14 +471,23 @@
 				8398B1521E49BDC9000FA81B /* EditCommentViewController.swift in Sources */,
 				8362B1D41E5BCD930025C98B /* HomeVC+CategoryCollectionViewDelegate.swift in Sources */,
 				83B8B03F1E5414AB00CC6FF6 /* CategoryTableViewController.swift in Sources */,
+				83A4E4561E601E5D009BE86A /* VoteResultHeaderView.swift in Sources */,
+				83A4E4541E6015F3009BE86A /* VoteResultBodyTableViewCell.swift in Sources */,
+				8349EE2D1E5EB1EA0010AC62 /* CheckMarkView.swift in Sources */,
 				831964211E5B150D00C13B52 /* CategoryGenerator.swift in Sources */,
 				832ED52F1E4B502100F79F8C /* DataController.swift in Sources */,
 				8353803F1E56E614002F7D1A /* RootViewController.swift in Sources */,
 				836625351E4993EF002676E5 /* HomeViewController.swift in Sources */,
+				839B06F81E5FD75F001F8E98 /* VoteResultView.swift in Sources */,
+				8311D32D1E5C82220024DB4A /* Util.swift in Sources */,
 				83B8B0411E5417C300CC6FF6 /* CategoryTableViewCell.swift in Sources */,
+				8349EE2F1E5EBE560010AC62 /* CardItemCell.swift in Sources */,
 				836625471E49AC94002676E5 /* Card.swift in Sources */,
 				836625331E4993EF002676E5 /* AppDelegate.swift in Sources */,
+				8350BF1A1E5F10EF003CFDE0 /* VoteResultViewController.swift in Sources */,
+				8350BF181E5F0D8F003CFDE0 /* VoteResultHeaderCell.swift in Sources */,
 				8398B1501E49BDAD000FA81B /* UserViewController.swift in Sources */,
+				8349EE2B1E5EB1540010AC62 /* Scalable.swift in Sources */,
 				83E08C5A1E4DA022002F245D /* EditCardTableHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,14 +495,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		836625361E4993EF002676E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				836625371E4993EF002676E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8366253B1E4993EF002676E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -545,7 +609,7 @@
 				INFOPLIST_FILE = 11112222/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dongyoon.-1112222";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VOTE;
 				SWIFT_OBJC_BRIDGING_HEADER = "11112222/11112222-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -562,7 +626,7 @@
 				INFOPLIST_FILE = 11112222/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dongyoon.-1112222";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VOTE;
 				SWIFT_OBJC_BRIDGING_HEADER = "11112222/11112222-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

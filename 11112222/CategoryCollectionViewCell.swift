@@ -21,26 +21,32 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     func updateUI(category: Category) {
         titleLabel.text = category.name
-        backgroundCategoryView.backgroundColor = UIColor.white
-        contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
-        
-        backgroundCategoryView.layer.cornerRadius = 3.0
-        backgroundCategoryView.layer.masksToBounds = false
-        backgroundCategoryView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        
-        backgroundCategoryView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
-        
-        backgroundCategoryView.layer.shadowOpacity = 0.8
+//        backgroundCategoryView.backgroundColor = UIColor.white
+//        contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+//        
+//        backgroundCategoryView.layer.cornerRadius = 3.0
+//        backgroundCategoryView.layer.masksToBounds = false
+//        backgroundCategoryView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+//        
+//        backgroundCategoryView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
+//        
+//        backgroundCategoryView.layer.shadowOpacity = 0.8
     }
     
-    
+    var isBold = false
     func configureCell(selected: Bool){
         if selected {
-            backgroundCategoryView.backgroundColor = UIColor.FlatColor.Green.Fern
+//            backgroundCategoryView.backgroundColor = UIColor.FlatColor.Green.Fern
+            titleLabel.textColor = UIColor.FlatColor.AppColor.ChiliPepper
+//            titleLabel.font = UIFont().setBoldFnc()
+            
+            
+            
         } else {
-            backgroundCategoryView.backgroundColor = UIColor.white
+//            backgroundCategoryView.backgroundColor = UIColor.white
+            titleLabel.textColor = UIColor.gray
+//            titleLabel.font = UIFont().detBoldFnc()
 
         }
     }
-
 }

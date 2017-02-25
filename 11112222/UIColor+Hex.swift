@@ -70,5 +70,74 @@ extension UIColor {
             static let Iron = UIColor(netHex: 0xD1D5D8)
             static let IronGray = UIColor(netHex: 0x75706B)
         }
+        struct AppColor {
+            static let ChiliPepper = UIColor(netHex: 0x9B1B30)
+        }
+        
+        struct CardColor {
+            static let pantone2445 : Int = 0xE28691
+            static let purple : Int = 0xA778BB
+            static let darkBlue : Int = 0x6271B3
+//            static let Pantone3519CP = UIColor(netHex: 0xE6A6A7)
+//            static let Pantone3568UP = UIColor(netHex: 0xEFC6D2)
+            
+            
+            //TEST
+//            static let Pantone2434UP = UIColor(netHex: 0xDF6B56)
+//            static let Pantone2448UP = UIColor(netHex: 0xD6685A)
+            
+            // Card Main Color
+            static let Purple = UIColor(netHex: purple)
+            static let Pantone2445CP = UIColor(netHex: pantone2445)
+//            static let LightPurple = UIColor(netHex: 0xDBBBD3)
+//            static let BrightBlue = UIColor(netHex: 0xC1D0EB)
+            static let DarkBlue = UIColor(netHex: darkBlue)
+            
+            // Card Body Color
+            static let SmokeWhite = UIColor(netHex: 0xF7F3F0)
+        }
+    }
+    
+    static func getMainColorHexValue() -> Int {
+        
+        var colorNumber : Int!
+        let randomNum = arc4random() % 3
+        switch randomNum {
+        case 0:
+            colorNumber = FlatColor.CardColor.pantone2445
+        case 1:
+            colorNumber = FlatColor.CardColor.purple
+        case 2:
+            colorNumber = FlatColor.CardColor.darkBlue
+        default: break
+        }
+        
+        return colorNumber
+
+    }
+    
+    static func getRandomColor() -> UIColor{
+        
+        let pColor1: UIColor = FlatColor.CardColor.Purple
+        
+//        let pColor2:UIColor = FlatColor.CardColor.LightPurple
+        
+        let pColor3: UIColor = FlatColor.CardColor.Pantone2445CP
+        
+        let pColor4: UIColor = FlatColor.CardColor.DarkBlue
+        
+        let randomNum = arc4random() % 3
+        var color = UIColor()
+        switch randomNum {
+        case 0:
+            color = pColor1
+        case 1:
+            color = pColor4
+        case 2:
+            color = pColor3
+        default: break
+        }
+        
+        return color
     }
 }

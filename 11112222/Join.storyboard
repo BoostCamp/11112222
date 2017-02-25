@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,20 +24,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11112222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXe-dZ-Ckg">
-                                <rect key="frame" x="112.5" y="314" width="151.5" height="40"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세상의 모든 고민 내가 결정해주마! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-MN-Ow7">
-                                <rect key="frame" x="16" y="285.5" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53A-RG-dfR">
-                                <rect key="frame" x="67.5" y="557" width="240" height="70"/>
+                                <rect key="frame" x="68" y="557" width="240" height="70"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signOutClick" destination="jxj-Hd-GLA" eventType="touchUpInside" id="B6M-CG-Nkk"/>
@@ -50,25 +40,30 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sOH-zD-TPw">
+                                <rect key="frame" x="93.5" y="160" width="187.5" height="187.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sOH-zD-TPw" secondAttribute="height" multiplier="1:1" id="Rdi-8A-32s"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="53A-RG-dfR" firstAttribute="top" secondItem="wcW-Cr-eiG" secondAttribute="bottom" constant="34" id="37y-7S-LO1"/>
+                            <constraint firstItem="TDT-eo-w5A" firstAttribute="centerX" secondItem="53A-RG-dfR" secondAttribute="centerX" id="4jn-PM-8vt"/>
                             <constraint firstItem="53A-RG-dfR" firstAttribute="centerX" secondItem="hNy-tf-2zY" secondAttribute="centerX" id="5tG-de-2bu"/>
-                            <constraint firstItem="jXe-dZ-Ckg" firstAttribute="top" secondItem="eJu-MN-Ow7" secondAttribute="bottom" constant="8" id="FSZ-Qc-QLJ"/>
+                            <constraint firstItem="sOH-zD-TPw" firstAttribute="centerX" secondItem="hNy-tf-2zY" secondAttribute="centerX" id="EbN-wz-0Ra"/>
                             <constraint firstItem="wcW-Cr-eiG" firstAttribute="leading" secondItem="hNy-tf-2zY" secondAttribute="leadingMargin" constant="52" id="OuY-Sk-Fri"/>
-                            <constraint firstItem="jXe-dZ-Ckg" firstAttribute="centerX" secondItem="hNy-tf-2zY" secondAttribute="centerX" id="Tll-fa-JYv"/>
-                            <constraint firstItem="eJu-MN-Ow7" firstAttribute="leading" secondItem="hNy-tf-2zY" secondAttribute="leadingMargin" id="aXL-na-4N3"/>
-                            <constraint firstItem="jXe-dZ-Ckg" firstAttribute="centerY" secondItem="hNy-tf-2zY" secondAttribute="centerY" id="kZv-lH-iZ5"/>
-                            <constraint firstItem="wcW-Cr-eiG" firstAttribute="centerX" secondItem="jXe-dZ-Ckg" secondAttribute="centerX" id="mUI-iE-Smi"/>
+                            <constraint firstItem="sOH-zD-TPw" firstAttribute="width" secondItem="hNy-tf-2zY" secondAttribute="width" multiplier="0.5" id="hjF-oY-Qrq"/>
                             <constraint firstItem="DJU-dN-jKv" firstAttribute="top" secondItem="53A-RG-dfR" secondAttribute="bottom" constant="40" id="o87-s4-NrP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eJu-MN-Ow7" secondAttribute="trailing" id="o94-Se-LXD"/>
+                            <constraint firstItem="sOH-zD-TPw" firstAttribute="top" secondItem="HWf-Wm-DCn" secondAttribute="bottom" constant="140" id="qlh-Js-sbs"/>
                             <constraint firstItem="53A-RG-dfR" firstAttribute="height" secondItem="TDT-eo-w5A" secondAttribute="height" id="u6U-0r-wUW"/>
-                            <constraint firstItem="TDT-eo-w5A" firstAttribute="centerX" secondItem="jXe-dZ-Ckg" secondAttribute="centerX" id="v3n-Xl-nGh"/>
                             <constraint firstItem="53A-RG-dfR" firstAttribute="width" secondItem="TDT-eo-w5A" secondAttribute="width" id="yNN-lA-dvn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="iconView" destination="sOH-zD-TPw" id="HWt-JQ-9nc"/>
                         <outlet property="logoutButton" destination="53A-RG-dfR" id="2LR-Tz-cO1"/>
                         <outlet property="signInButton" destination="TDT-eo-w5A" id="pFx-f5-MkC"/>
                     </connections>
@@ -78,4 +73,7 @@
             <point key="canvasLocation" x="-182" y="154"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login-icon" width="170" height="170"/>
+    </resources>
 </document>

@@ -9,58 +9,134 @@
 import Foundation
 import Firebase
 
+struct CardNotification {
+    static let Name = "CardNotification"
+    static let User = "UserNotification"
+}
+
 class Card : NSObject {
     // MARK: Properties
-    var by : String?
-    var user : User? // 게시자
+    var cardID : String? // 카드 ID
+    var uid : String? // 게시자 파이어베이스 ID
+    var username : String?
+    var photoURL : String?
+    var categoryID : String?
+    var voteCount : Int?
+    var mainColor : Int?
+    //    var user : User? // 게시자
     var title : String?
     var desc : String?
+    var _date : Date? // 게시 날짜
+    var _deadLine : Date?// 투표 기한 날짜
     var voteItems = [VoteItem]()
+    var votes : [String:String]?
     var comments : [CardComment]?
+    var postedAt : String {
+        return Util.timeAgoSinceDate(_deadLine!, numericDates: true)
+    }
     
+    var untilAt : (Bool,String) {
+        return Util.timeLeftFromNow(_deadLine!)
+    }
     // if user vote this card
-    var isVote : Bool?
+    var isVoted : Bool = false
+    var isOwner : Bool = false
     
     // card has category
     var category: Category?
-    var categoryID : String?
     
     var isClosed : Bool = false // 게시자에 한해 게시물을 닫을 수 있고, 투표기한을 둘까? 고민되는군
     
     var isPostable : Bool {
-        toString()
         print("isPostable \(voteItemsIsFilled() && defaultValueIsFilled())")
         return voteItemsIsFilled() && defaultValueIsFilled()
     }
     
     init(dic: Dictionary<String, Any>) {
-        self.by = dic["by"] as! String?
-        self.categoryID = dic["into"] as! String?
-        self.desc = dic["description"] as? String ?? ""
-        self.title = dic["title"] as? String ?? ""
+        if let id = dic["uid"] as? String {
+            uid = id
+        }
+        if let name = dic["author"] as? String {
+            username = name
+        }
+        if let photoURL = dic["photoURL"] as? String {
+            self.photoURL = photoURL
+        }
+        categoryID = (dic["caID"] as? String)!
+        title = (dic["title"] as? String)!
+        
+        if let body = dic["body"]  {
+            desc = body as? String
+        }
+        
+        // 게시날짜
+        if let timestamp = dic["timestamp"] as? Double{
+            _date = Date(timeIntervalSince1970: timestamp / 1000)
+        }
+        // 데드라인
+        if let deadLine = dic["deadLine"] as? Double {
+            _deadLine = Date(timeIntervalSince1970: deadLine / 1000)
+        }
+        
+        
+        if let voteCount = dic["voteCount"] as? Int {
+            self.voteCount = voteCount
+        } else {
+            self.voteCount = 0
+        }
+        
+        if let votes = dic["votes"] as? [String : String] {
+            self.votes = votes
+        } else {
+            self.votes = [:]
+        }
+        
+        print("voteCount \(voteCount)")
+        print("voteCount \(votes)")
+        if let currentUserID = LoginManager.sharedInstance().getUserID(){
+            //투표여부
+            if let _ = votes?[currentUserID] {
+                isVoted = true
+            } else {
+                isVoted = false
+            }
+            //게시여부
+            if uid == currentUserID {
+                isOwner = true
+            } else {
+                isOwner = false
+            }
+
+        } else {
+            isVoted = false
+        }
+        
+        //투표아이템
+        if let items = dic["vote-items"] as! [String : Any]?{
+            for item in items  {
+                let voteItem = VoteItem(dic: item.value as! Dictionary<String, Any>)
+                voteItem.id = item.key
+                
+                voteItems.append(voteItem)
+            }
+            
+        }
+        //메인칼라
+        if let mainColor = dic["mainColor"] as? Int {
+            self.mainColor = mainColor
+        }
+        
     }
-    
-//    init(owner user: User, title: String, description: String, options: [VoteItem] , isVote : Bool = false, category: Category, isClosed: Bool = false) {
-//        self.user = user
-//        self.title = title
-//        self.desc = description
-//        self.voteItems = options
-//        self.isVote = isVote
-//        self.category = category
-//        self.isClosed = isClosed
-//    }
     
     override init() {
         
         // 업로드 화면을 위한 초기화
         for i in  0...1 {
             let item = VoteItem()
-            item.id = i
             voteItems.append(item)
         }
     }
-
-    // 문제 된다 이거
+    
     private func voteItemsIsFilled() -> Bool {
         var removeFlag : Bool = false // 데이터 삭제가 필요하다
         var removeIndex : Int? // 최초 nil
@@ -87,7 +163,7 @@ class Card : NSObject {
         // 3. 중간에 빈거 없이 정리된 상태 일거야.
         guard removeIndex == nil else {
             let count = voteItems.count - removeIndex!
-
+            
             for _ in 0..<count {
                 
                 print("removeIndex \(voteItems.popLast())")
@@ -101,8 +177,8 @@ class Card : NSObject {
     
     private func defaultValueIsFilled() -> Bool {
         
-        guard let title = self.title, !title.trimmingCharacters(in: .whitespaces).isEmpty else { return false }
-        guard self.category != nil else { return false }
+        guard let title = self.title, !title.trimmingCharacters(in: .whitespaces).isEmpty,
+            _deadLine != nil, category != nil else { return false }
         
         return true
     }
@@ -122,7 +198,7 @@ class Card : NSObject {
         }
         
         print("\(voteItems.count) \(tt)")
-
+        
     }
 }
 

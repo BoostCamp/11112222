@@ -12,7 +12,6 @@ class CategoryTableViewCell: UITableViewCell {
     
     //MAKR: - IBOutlet
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +20,6 @@ class CategoryTableViewCell: UITableViewCell {
     
     func configureCell(category: Category) {
         titleLabel.text = category.name
-        iconImageView.image = UIImage.init(named: "pokemon.png")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
