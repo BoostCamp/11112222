@@ -45,6 +45,7 @@ class VoteResultBodyTableViewCell: UITableViewCell {
             optionTextLabel.text = ""
         }
         
+        
         if let votes = card.votes, let count = card.voteCount{
             
             if votes.count > 0 && count > 0 {
