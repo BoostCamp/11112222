@@ -62,7 +62,7 @@ class Card : NSObject {
         if let photoURL = dic["photoURL"] as? String {
             self.photoURL = photoURL
         }
-        categoryID = (dic["caID"] as? String)!
+        categoryID = (dic["caID"] as? String)! // 여기서 죽는 이유 해결 하자.
         title = (dic["title"] as? String)!
         
         if let body = dic["body"]  {
