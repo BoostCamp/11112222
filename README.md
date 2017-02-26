@@ -7,9 +7,9 @@
 
 ## ScreenShot
 ![feed](https://github.com/BoostCamp/11112222/blob/master/images/feed.jpeg?raw=true)
-![upload](https://github.com/BoostCamp/11112222/blob/master/images/upload?raw=true)
-![mypage](https://github.com/BoostCamp/11112222/blob/master/images/mypage?raw=true)
-![result](https://github.com/BoostCamp/11112222/blob/master/images/result.png?raw=true)
+![upload](https://github.com/BoostCamp/11112222/blob/master/images/upload.jpeg?raw=true)
+![mypage](https://github.com/BoostCamp/11112222/blob/master/images/mypage.jpeg?raw=true)
+![result](https://github.com/BoostCamp/11112222/blob/master/images/result.jpeg?raw=true)
 
 ## Author
 DONGYOON KANG
